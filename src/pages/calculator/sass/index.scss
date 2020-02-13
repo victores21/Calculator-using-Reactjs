@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+.container{
+    background: #3b3b3b;
+    height: 100vh;
+
+    .calculator{
+        height: 400px;
+        width: 300px;
+        background: #433437;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "cal_log cal_log cal_log cal_log"
+                             "clear clear clear divide"
+                             "seven eight nine subtraction"
+                             "four five six add"
+                             "one two three equal";
+
+    
+        & #cal_log{
+            grid-area: cal_log;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            background: #3b3b3b;
+            color:rgb(206, 206, 206);
+            
+        }
+        & #clear{
+            grid-area: clear;
+        }
+
+        & #subtraction{
+            grid-area: subtraction;
+            background: #f1274f;
+        }
+
+        & #divide{
+            grid-area: divide;
+            background: #f1274f;
+        }
+
+        & #add{
+            grid-area: add;
+            background: #f1274f;
+        }
+
+        & #equal{
+            grid-area: equal;
+            background: #f1274f;
+        }
+
+        & #nine{
+            grid-area: nine;
+        }
+        & #eight{
+            grid-area: eight;
+        }
+        & #seven{
+            grid-area: seven;
+        }
+        & #six{
+            grid-area: six;
+        }
+        & #five{
+            grid-area: five;
+        }
+        & #four{
+            grid-area: four;
+        }
+        & #three{
+            grid-area: three;
+        }
+        & #two{
+            grid-area: two;
+        }
+        & #one{
+            grid-area: one;
+        }
+
+    
+    & div{
+            background: rgb(206, 206, 206);
+            color: #000;
+            border: 0.1px solid #3b3b3b ;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    }
+  }
+}
