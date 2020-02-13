@@ -23,6 +23,7 @@
                              "seven eight nine subtraction"
                              "four five six add"
                              "one two three equal";
+        border: 1px solid #cecece;
 
     
         & #cal_log{
@@ -31,6 +32,10 @@
             grid-column-end: 5;
             background: #3b3b3b;
             color:rgb(206, 206, 206);
+            border: none;
+            font-size: 35px;
+            text-align: end;
+            padding: 1rem;
             
         }
         & #clear{
@@ -39,22 +44,18 @@
 
         & #subtraction{
             grid-area: subtraction;
-            background: #f1274f;
         }
 
         & #divide{
             grid-area: divide;
-            background: #f1274f;
         }
 
         & #add{
             grid-area: add;
-            background: #f1274f;
         }
 
         & #equal{
             grid-area: equal;
-            background: #f1274f;
         }
 
         & #nine{
@@ -86,7 +87,7 @@
         }
 
     
-    & div{
+        & div{
             background: rgb(206, 206, 206);
             color: #000;
             border: 0.1px solid #3b3b3b ;
@@ -94,6 +95,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-    }
+        }
+
+        .main-btns{
+            &:hover{
+                background:rgba(206, 206, 206, 0.671) ;
+            }
+        }
+
+        .action-btns{
+            background: #f1274f;
+            &:hover{
+                background:#c90129 ;
+            }
+        }
   }
 }

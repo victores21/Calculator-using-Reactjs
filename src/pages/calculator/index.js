@@ -7,21 +7,21 @@ const Calculator = () => {
         <>
             <div className="container">
                 <div className="calculator">
-                    <div id="cal_log">Log</div>
-                    <div id="clear">clear</div>
-                    <div id="divide">%</div>
-                    <div id="subtraction">-</div>
-                    <div id="add">+</div>
-                    <div id="equal">=</div>
-                    <div id="nine">9</div>
-                    <div id="eight">8</div>
-                    <div id="seven">7</div>
-                    <div id="six">6</div>
-                    <div id="five">5</div>
-                    <div id="four">4</div>
-                    <div id="three">3</div>
-                    <div id="two">2</div>
-                    <div id="one">1</div>
+                    <input type="text" name="" id="cal_log" value="0" />
+                    <div className="main-btns" id="clear">clear</div>
+                    <div className="action-btns" id="divide">÷</div>
+                    <div className="action-btns" id="subtraction">-</div>
+                    <div className="action-btns" id="add">+</div>
+                    <div className="action-btns" id="equal">=</div>
+                    <div className="main-btns" id="nine">9</div>
+                    <div className="main-btns" id="eight">8</div>
+                    <div className="main-btns" id="seven">7</div>
+                    <div className="main-btns" id="six">6</div>
+                    <div className="main-btns" id="five">5</div>
+                    <div className="main-btns" id="four">4</div>
+                    <div className="main-btns" id="three">3</div>
+                    <div className="main-btns" id="two">2</div>
+                    <div className="main-btns" id="one">1</div>
                 </div>
             </div>
         </>
