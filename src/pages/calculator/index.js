@@ -4,10 +4,14 @@ import "./sass/index.css"
 
 const Calculator = () => {
 
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState({
+        input: ""
+    });
 
     const handleChange = calValue => {
-        setValue(calValue);
+        setValue({ input: value.input + calValue });
+        console.log(value)
+
     }
 
 
@@ -15,7 +19,7 @@ const Calculator = () => {
         <>
             <div className="container">
                 <div className="calculator">
-                    <input type="text" name="" id="cal_log" value={value} />
+                    <input type="text" name="" id="cal_log" value={value.input} />
                     <div className="main-btns" onClick={() => handleChange(0)} id="clear">clear</div>
                     <div className="action-btns" onClick={() => handleChange("÷")} id="divide">÷</div>
                     <div className="action-btns" onClick={() => handleChange("-")} id="subtraction">-</div>
