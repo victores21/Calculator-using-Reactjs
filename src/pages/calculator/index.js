@@ -1,39 +1,58 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./sass/index.css"
 
 
 const Calculator = () => {
 
     const [value, setValue] = useState({
-        input: ""
+        input: "",
+        firstNumber: "",
+        secodnNumber: ""
     });
 
-    const handleChange = calValue => {
-        setValue({ input: value.input + calValue });
-        console.log(value)
 
+    const handleAddToLog = (calValue, event) => {
+        if (event.target.id === "equal") {
+            setValue({ input: String(eval(value.input)) })
+        } else {
+            let cou = String(value.input + calValue);
+            setValue({ input: cou })
+            console.log(cou);
+        }
     }
 
+    const handleClearLog = () => {
+        setValue({ input: "" })
+    }
+
+    /*     const handleOperations = event => {
+            if (event.target.id === "add") {
+                const final = eval(value.input);
+                console.log(final);
+                setValue({ input: final })
+            }
+        }
+     */
 
     return (
         <>
             <div className="container">
                 <div className="calculator">
                     <input type="text" name="" id="cal_log" value={value.input} />
-                    <div className="main-btns" onClick={() => handleChange(0)} id="clear">clear</div>
-                    <div className="action-btns" onClick={() => handleChange("÷")} id="divide">÷</div>
-                    <div className="action-btns" onClick={() => handleChange("-")} id="subtraction">-</div>
-                    <div className="action-btns" onClick={() => handleChange("+")} id="add">+</div>
-                    <div className="action-btns" onClick={() => handleChange("=")} id="equal">=</div>
-                    <div className="main-btns" onClick={() => handleChange(9)} id="nine">9</div>
-                    <div className="main-btns" onClick={() => handleChange(8)} id="eight">8</div>
-                    <div className="main-btns" onClick={() => handleChange(7)} id="seven">7</div>
-                    <div className="main-btns" onClick={() => handleChange(6)} id="six">6</div>
-                    <div className="main-btns" onClick={() => handleChange(5)} id="five">5</div>
-                    <div className="main-btns" onClick={() => handleChange(4)} id="four">4</div>
-                    <div className="main-btns" onClick={() => handleChange(3)} id="three">3</div>
-                    <div className="main-btns" onClick={() => handleChange(2)} id="two">2</div>
-                    <div className="main-btns" onClick={() => handleChange(1)} id="one">1</div>
+                    <div className="main-btns" onClick={() => handleClearLog()} id="clear">clear</div>
+                    <div className="action-btns" onClick={(event) => handleAddToLog("/", event)} id="divide">÷</div>
+                    <div className="action-btns" onClick={(event) => handleAddToLog("-", event)} id="subtraction">-</div>
+                    <div className="action-btns" onClick={event => handleAddToLog("+", event)} id="add">+</div>
+                    <div className="action-btns" onClick={event => handleAddToLog("=", event)} id="equal">=</div>
+                    <div className="main-btns" onClick={(event) => handleAddToLog(9, event)} id="nine">9</div>
+                    <div className="main-btns" onClick={(event) => handleAddToLog(8, event)} id="eight">8</div>
+                    <div className="main-btns" onClick={(event) => handleAddToLog(7, event)} id="seven">7</div>
+                    <div className="main-btns" onClick={(event) => handleAddToLog(6, event)} id="six">6</div>
+                    <div className="main-btns" onClick={(event) => handleAddToLog(5, event)} id="five">5</div>
+                    <div className="main-btns" onClick={(event) => handleAddToLog(4, event)} id="four">4</div>
+                    <div className="main-btns" onClick={(event) => handleAddToLog(3, event)} id="three">3</div>
+                    <div className="main-btns" onClick={(event) => handleAddToLog(2, event)} id="two">2</div>
+                    <div className="main-btns" onClick={(event) => handleAddToLog(1, event)} id="one">1</div>
                 </div>
             </div>
         </>
