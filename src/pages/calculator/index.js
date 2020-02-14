@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./sass/index.css"
 
 
@@ -6,16 +6,21 @@ const Calculator = () => {
 
     const [value, setValue] = useState({
         input: "",
-        firstNumber: "",
-        secodnNumber: "",
     });
 
 
     const handleAddToLog = (calValue, event) => {
         if (event.target.id === "equal") {
-            setValue({ input: String(eval(value.input)) })
+            if (value.input == "") {
+                setValue({ input: "" })
+                console.log("He")
+            } else {
+                const result = parseInt(eval(value.input));
+                const resultString = String(result);
+                setValue({ input: resultString })
+            }
         } else {
-            let cou = String(value.input + calValue);
+            let cou = value.input + calValue;
             setValue({ input: cou })
             console.log(cou);
         }
@@ -53,6 +58,7 @@ const Calculator = () => {
                     <div className="main-btns" onClick={(event) => handleAddToLog(3, event)} id="three">3</div>
                     <div className="main-btns" onClick={(event) => handleAddToLog(2, event)} id="two">2</div>
                     <div className="main-btns" onClick={(event) => handleAddToLog(1, event)} id="one">1</div>
+                    <div className="main-btns" onClick={(event) => handleAddToLog(0, event)} id="zero">0</div>
                 </div>
             </div>
         </>
