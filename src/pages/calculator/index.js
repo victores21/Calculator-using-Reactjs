@@ -7,7 +7,7 @@ const Calculator = () => {
     const [value, setValue] = useState({
         input: "",
         firstNumber: "",
-        secodnNumber: ""
+        secodnNumber: "",
     });
 
 
